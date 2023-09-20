@@ -15,7 +15,8 @@ const schema = {
       title: 'Slug',
       type: 'slug',
       options: { source: 'title' }
-    }, {
+    },
+    {
       name: 'downloadLink',
       title: 'Download Link',
       type: 'url',
@@ -33,7 +34,7 @@ const schema = {
       type: 'image',
       validation: (Rule: any) => Rule.required(),
       options: {
-        hotspot: true
+        hotspot: true,
       }
     },
     {
@@ -48,4 +49,4 @@ const schema = {
   ]
 }
 
-export default schema
+export default schema;
