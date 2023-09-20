@@ -1,3 +1,4 @@
+import SearchForm from "@/components/SearchForm";
 import React from "react";
 
 const page = () => {
@@ -9,7 +10,10 @@ const page = () => {
             Javascript Mastery
           </h1>
         </div>
+
+        <SearchForm />
       </section>
+      Filters
     </main>
   );
 };
