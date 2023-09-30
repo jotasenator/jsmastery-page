@@ -1,16 +1,22 @@
 import Filters from "@/components/Filters";
+import Header from "@/components/Header";
 import ResourceCard from "@/components/ResourceCard";
 import SearchForm from "@/components/SearchForm";
 import { getResources } from "@/sanity/actions";
 import React from "react";
 
-const Page = async () => {
+type Props = {
+  searchParams: { [key: string]: string | undefined };
+};
+
+const Page = async ({ searchParams }: Props) => {
   const resources = await getResources({
-    category: "",
+    category: searchParams?.category || "",
     page: "1",
     query: "",
   });
   console.log(resources);
+  console.log({ searchParams });
   return (
     <main className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col">
       <section className="nav-padding w-full">
@@ -25,7 +31,7 @@ const Page = async () => {
       <Filters />
 
       <section className="flex-center mt-6 w-full flex-col sm:mt-20">
-        Header
+        <Header />
         <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
           {resources?.length > 0 ? (
             resources.map((resource: any) => (
