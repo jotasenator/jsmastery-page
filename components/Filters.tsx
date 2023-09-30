@@ -8,6 +8,7 @@ const Filters = () => {
   const handleFilter = (link: string) => {
     setActive(link);
   };
+  console.log(links);
   return (
     <ul className="text-white-800 body-text no-scrollbar overflow-auto flex max-w-full gap-2 py-12 sm:max-w-2xl ">
       {links.map((link) => (
