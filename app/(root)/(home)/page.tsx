@@ -13,7 +13,7 @@ const Page = async ({ searchParams }: Props) => {
   const resources = await getResources({
     category: searchParams?.category || "",
     page: "1",
-    query: "",
+    query: searchParams?.query || "",
   });
   console.log(resources);
   console.log({ searchParams });
